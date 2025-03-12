@@ -50,6 +50,7 @@ const Hero = () => {
           }}
           style={{
             background: 'linear-gradient(to right, #4F46E5, #7C3AED)',
+            willChange: 'transform',
           }}
         />
         <motion.div
@@ -65,68 +66,7 @@ const Hero = () => {
           }}
           style={{
             background: 'linear-gradient(to right, #EC4899, #8B5CF6)',
-          }}
-        />
-        <motion.div
-          className="absolute w-[800px] h-[800px] rounded-full blur-[160px] opacity-10"
-          animate={{
-            x: ['-15%', '15%', '-15%'],
-            y: ['-5%', '5%', '-5%'],
-          }}
-          transition={{
-            duration: 20,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          style={{
-            background: 'linear-gradient(to right, #3B82F6, #10B981)',
-          }}
-        />
-
-        {/* Smaller, faster-moving blobs */}
-        <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-15"
-          animate={{
-            x: ['-30%', '30%', '-30%'],
-            y: ['-20%', '20%', '-20%'],
-          }}
-          transition={{
-            duration: 15,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          style={{
-            background: 'linear-gradient(to right, #F59E0B, #EF4444)',
-          }}
-        />
-        <motion.div
-          className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-10"
-          animate={{
-            x: ['20%', '-20%', '20%'],
-            y: ['10%', '-10%', '10%'],
-          }}
-          transition={{
-            duration: 12,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          style={{
-            background: 'linear-gradient(to right, #10B981, #3B82F6)',
-          }}
-        />
-        <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full blur-[80px] opacity-10"
-          animate={{
-            x: ['-10%', '10%', '-10%'],
-            y: ['-15%', '15%', '-15%'],
-          }}
-          transition={{
-            duration: 10,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          style={{
-            background: 'linear-gradient(to right,rgb(33, 228, 65),rgb(43, 190, 183))',
+            willChange: 'transform',
           }}
         />
       </div>
@@ -137,7 +77,8 @@ const Hero = () => {
           style={{ 
             opacity: introOpacity,
             scale: introScale,
-            y: introY
+            y: introY,
+            willChange: 'opacity, transform',
           }}
           className="absolute text-center z-10"
         >
@@ -166,7 +107,8 @@ const Hero = () => {
           style={{ 
             opacity: aboutOpacity,
             scale: aboutScale,
-            y: aboutY
+            y: aboutY,
+            willChange: 'opacity, transform',
           }}
           className="absolute text-center z-20 max-w-2xl mx-auto px-4"
         >
