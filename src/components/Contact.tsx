@@ -56,7 +56,7 @@ const Contact = () => {
   const isInView = useInView(ref, { once: false }); // Trigger every time the element is in view
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 relative">
+    <section id="contact" className="py-20 bg-gray-950 relative">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
