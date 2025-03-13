@@ -15,7 +15,7 @@ function App() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative w-screen overflow-x-hidden">
+    <div className="min-h-screen bg-gray-950 text-white relative w-screen overflow-x-hidden">
       {/* Main content */}
       <div className="relative z-10">
         <Hero />
@@ -24,7 +24,7 @@ function App() {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-950"
         >
           <Skills />
           <Projects />
