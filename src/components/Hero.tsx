@@ -164,7 +164,7 @@ const Hero = () => {
       </div>
 
       {/* Spacer div to enable scrolling */}
-      <div style={{ height: '300vh' }} />
+      <div style={{ height: '280vh' }} />
     </div>
   );
 };
