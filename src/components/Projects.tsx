@@ -21,7 +21,7 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ scale: 1.02, transition: { duration: 0.13 }}}
-      className="p-6 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-900 hover:to-purple-900 transition-all duration-300"
+      className="p-6 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-950 hover:to-purple-950 transition-all duration-100"
     >
       <h3 className="text-2xl font-bold text-blue-400 mb-3">{title}</h3>
       <p className="text-gray-300 mb-4">{description}</p>
