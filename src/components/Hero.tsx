@@ -139,7 +139,7 @@ const Hero = () => {
             Building CodeMaxed, crafting innovative software solutions, and honing my skills at Apps
             Technologies. I'm passionate about using technology to solve real-world challenges,
             collaborating with talented people, and constantly pushing myself to grow. Let's connect
-            and turn ideas into reality! �
+            and turn ideas into reality! 🚀
           </p>
 
           <motion.div
