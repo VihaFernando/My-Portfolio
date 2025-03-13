@@ -51,7 +51,7 @@ const SkillCard = ({ icon, name, delay }: { icon: string; name: string; delay: n
       }}
       whileHover={{ scale: 1.0, y: -5, transition: { duration: 0.13 } }} // Instant hover effect
       whileTap={{ scale: 0.92 }}
-      className="p-4 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-900 hover:to-purple-900 transition-all duration-150 cursor-pointer"
+      className="p-4 rounded-xl bg-gradient-to-br from-gray-800 to-gray-800 hover:from-blue-900 hover:to-purple-900 transition-all duration-150 cursor-pointer"
     >
       <div className="flex items-center space-x-3">
         <img src={icon} alt={name} className="w-6 h-6" />
@@ -122,7 +122,7 @@ const Skills = () => {
 
       <div className="space-y-12">
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-blue-400">Frontend Development</h3>
+          <h2 className="text-xl font-semibold mb-6 text-blue-400">Frontend Development</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {frontendSkills.map((skill, i) => (
               <SkillCard key={skill.name} icon={skill.icon} name={skill.name} delay={i * 0.1} />
@@ -131,7 +131,7 @@ const Skills = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-blue-400">Backend Development</h3>
+          <h2 className="text-xl font-semibold mb-6 text-blue-400">Backend Development</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {backendSkills.map((skill, i) => (
               <SkillCard key={skill.name} icon={skill.icon} name={skill.name} delay={i * 0.1} />
@@ -140,7 +140,7 @@ const Skills = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-blue-400">Database</h3>
+          <h2 className="text-xl font-semibold mb-6 text-blue-400">Database</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {databaseSkills.map((skill, i) => (
               <SkillCard key={skill.name} icon={skill.icon} name={skill.name} delay={i * 0.1} />
@@ -149,7 +149,7 @@ const Skills = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-blue-400">Design</h3>
+          <h2 className="text-xl font-semibold mb-6 text-blue-400">Design</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {designSkills.map((skill, i) => (
               <SkillCard key={skill.name} icon={skill.icon} name={skill.name} delay={i * 0.1} />
@@ -158,8 +158,8 @@ const Skills = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-blue-400">Soft Skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <h2 className="text-xl font-semibold mb-6 text-blue-400">Soft Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {softSkills.map((skill, i) => (
               <SkillCard key={skill.name} icon={skill.icon} name={skill.name} delay={i * 0.1} />
             ))}
