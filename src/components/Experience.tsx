@@ -54,7 +54,7 @@ const Experience = () => {
       title: "Co-Founder",
       company: "CodeMaxed",
       period: "October 2024 - Present",
-      description: "Leading the technical vision and development of innovative software solutions. Architecting scalable applications and mentoring junior developers while fostering a culture of continuous learning and excellence.",
+      description: "Leading the technical vision and development of innovative software solutions. Architecting scalable applications and delivering innovative tech solutions while collaborating with a skilled team to bring ideas to life.",
       icon: Code2
     }
   ];
