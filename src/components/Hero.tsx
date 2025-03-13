@@ -56,14 +56,14 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated floating bubbles */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 15 }).map((_, index) => {
+        {Array.from({ length: 10 }).map((_, index) => { // Reduced number of bubbles for mobile optimization
           const { x, y, duration, delay, size } = generateRandomValues();
           const color = bubbleColors[index % bubbleColors.length]; // Cycle through colors
 
           return (
             <motion.div
               key={index}
-              className="absolute rounded-full blur-[150px] opacity-30"
+              className="absolute rounded-full blur-[100px] opacity-30" // Reduced blur for better performance
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
@@ -90,7 +90,7 @@ const Hero = () => {
 
       {/* Gradient overlay for seamless transition */}
       <div
-        className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-gray-950 to-transparent pointer-events-none"
+        className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent pointer-events-none" // Adjusted gradient for smoother transition
         style={{ zIndex: 30 }}
       />
 
