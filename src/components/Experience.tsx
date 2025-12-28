@@ -1,40 +1,92 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Code2 } from 'lucide-react';
+import { Briefcase, Users, Code2, Calendar, CheckCircle2 } from 'lucide-react';
 
-const ExperienceCard = ({ 
-  title, 
-  company, 
-  period, 
-  description, 
-  icon: Icon,
-  delay 
-}: { 
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-  icon: any;
-  delay: number;
-}) => {
+const experiences = [
+  {
+    title: "Associate Software Engineer (Technical Lead)",
+    company: "Apps Technologies (Pvt) Ltd",
+    period: "August 2025 - Present",
+    current: true,
+    description: [
+      "Leading and coordinating development tasks across the team for end-to-end academic processes, ranging from student registration to convocation.",
+      "Designing and implementing core system modules including examinations, grading engines, messaging systems, and administrative workflows.",
+      "Mentoring interns and junior team members through rigorous code reviews, technical guidance, and enforcing best practices.",
+      "Conducting technical interviews and performance evaluations for incoming software engineering recruits."
+    ],
+    icon: Users
+  },
+  {
+    title: "Co-Founder",
+    company: "CodeMaxed",
+    period: "October 2024 - Present",
+    current: true,
+    description: [
+      "Leading the technical vision and architecture of scalable software solutions.",
+      "Driving innovation in product development while managing a skilled team of developers."
+    ],
+    icon: Code2
+  },
+  {
+    title: "Software Developer Intern",
+    company: "Apps Technologies (Pvt) Ltd",
+    period: "August 2024 - August 2025",
+    current: false,
+    description: [
+      "Contributed to enterprise-level software solutions, focusing on full-stack development.",
+      "Collaborated with senior developers to implement robust features and maintain high-quality code standards."
+    ],
+    icon: Briefcase
+  }
+];
+
+const ExperienceItem = ({ exp, index }: { exp: typeof experiences[0]; index: number }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.02 }}
-      className="p-6 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-950 hover:to-purple-950 
-      transition-all duration-100 shadow-lg shadow-black/20 group"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className="relative pl-8 sm:pl-12 py-6 group"
     >
-      <div className="flex items-start gap-4">
-        <div className="p-3 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors duration-100">
-          <Icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-100" />
+      {/* Timeline Line */}
+      <div className="absolute left-2 sm:left-3 top-0 bottom-0 w-px bg-white/10 group-last:bottom-auto group-last:h-6" />
+
+      {/* Timeline Dot / Icon */}
+      <div className={`absolute left-0 sm:left-1 top-6 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 ${exp.current ? 'border-blue-400 bg-blue-500/20 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'border-neutral-600 bg-neutral-900'} z-10 transition-colors duration-300 group-hover:border-white`} />
+
+      {/* Content Card */}
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start rounded-2xl p-5 sm:p-6 bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] transition-all duration-300 backdrop-blur-sm">
+
+        {/* Icon Box (Hidden on tiny screens, visible on md) */}
+        <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-white group-hover:scale-110 transition-transform duration-300">
+          <exp.icon className="w-5 h-5" />
         </div>
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-blue-400 mb-1 group-hover:text-blue-300 transition-colors duration-100">{title}</h3>
-          <p className="text-gray-300 font-medium mb-1">{company}</p>
-          <p className="text-sm text-gray-400 mb-3">{period}</p>
-          <p className="text-gray-300">{description}</p>
+
+        <div className="flex-1 space-y-2">
+          {/* Header Section */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight">{exp.title}</h3>
+              <p className="text-blue-400 font-medium text-sm">{exp.company}</p>
+            </div>
+
+            {/* Date Badge */}
+            <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border ${exp.current ? 'bg-blue-500/10 border-blue-500/20 text-blue-300' : 'bg-white/5 border-white/10 text-neutral-400'} w-fit`}>
+              <Calendar className="w-3 h-3" />
+              {exp.period}
+            </div>
+          </div>
+
+          {/* Description List */}
+          <ul className="mt-4 space-y-2">
+            {exp.description.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-neutral-400 leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 text-neutral-600 flex-shrink-0 group-hover:text-blue-500/50 transition-colors" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </motion.div>
@@ -42,42 +94,49 @@ const ExperienceCard = ({
 };
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: "Software Developer Intern",
-      company: "Apps Technologies (PVT) LTD",
-      period: "August 2024 - Present",
-      description: "Contributing to enterprise-level software solutions, focusing on full-stack development with modern technologies. Collaborating with senior developers to implement robust features and maintain high-quality code standards.",
-      icon: Briefcase
-    },
-    {
-      title: "Co-Founder",
-      company: "CodeMaxed",
-      period: "October 2024 - Present",
-      description: "Leading the technical vision and development of innovative software solutions. Architecting scalable applications and delivering innovative tech solutions while collaborating with a skilled team to bring ideas to life.",
-      icon: Code2
-    }
-  ];
-
   return (
-    <section className="py-20">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text"
-      >
-        Experience
-      </motion.h2>
+    <section className="relative py-12 md:py-16 bg-[#050505] overflow-hidden" id="experience">
 
-      <div className="max-w-3xl mx-auto space-y-6">
-        {experiences.map((exp, index) => (
-          <ExperienceCard
-            key={exp.title}
-            {...exp}
-            delay={index * 0.2}
-          />
-        ))}
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-40 left-[-100px] w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+
+        {/* Header */}
+        <div className="mb-10 md:mb-14 pt-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-medium text-white mb-4 tracking-tight"
+          >
+            Professional <span className="font-serif italic text-neutral-500">Journey</span>.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-neutral-400 text-sm md:text-base font-light"
+          >
+            A timeline of my career growth, leadership, and technical contributions.
+          </motion.p>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative">
+          {experiences.map((exp, index) => (
+            <ExperienceItem key={index} exp={exp} index={index} />
+          ))}
+        </div>
+
+        {/* Section Divider - Bottom */}
+        <div className="mt-24 relative">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/10 to-transparent blur-sm" />
+        </div>
+
       </div>
     </section>
   );

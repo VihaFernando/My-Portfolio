@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,49 +8,61 @@
   color-scheme: dark;
 }
 
-body {
-  background-color: #111827;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-::selection {
-  background: #60A5FA;
-  color: #fff;
-}
-
-.gradient-text {
-  @apply bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 8s linear infinite;
-}
-
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  width: 100vw;
 }
 
-#root {
-  width: 100vw;
+body {
+  background-color: #050505; /* Deep matte black */
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography Overrides --- */
+/* This ensures the 'font-serif' class uses our fancy font */
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* --- Custom Scrollbar (Premium Look) --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 5px;
+  border: 2px solid #050505; /* Creates padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* --- Selection Color --- */
+::selection {
+  background: rgba(59, 130, 246, 0.3); /* Blue-500 with opacity */
+  color: #93c5fd; /* Blue-300 */
+}
+
+/* --- Utilities --- */
+.gradient-text {
+  @apply bg-gradient-to-r from-white via-neutral-200 to-neutral-500 text-transparent bg-clip-text;
+}
+
+/* Fix for strictly preventing horizontal scroll on mobile */
+#root {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
