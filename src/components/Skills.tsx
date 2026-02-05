@@ -6,19 +6,15 @@ import { Terminal, Database, Palette, Cpu, Layout, Server, Code2, Share2 } from 
 import ReactIcon from '../icons/react.png';
 import FlutterIcon from '../icons/flutter.png';
 import ReactNativeIcon from '../icons/react-native.png';
-import HTMLIcon from '../icons/html.png';
-import CSSIcon from '../icons/css.png';
-import JavaScriptIcon from '../icons/javascript.png';
+import TypeScriptIcon from '../icons/typescript.png';
 import AngularIcon from '../icons/angular.png';
 import AndroidIcon from '../icons/android.png';
 import NodeJsIcon from '../icons/nodejs.png';
 import JavaIcon from '../icons/java.png';
-import DartIcon from '../icons/dart.png';
 import PythonIcon from '../icons/python.png';
 import SpringBootIcon from '../icons/spring-boot.png';
 import ExpressJsIcon from '../icons/expressjs.png';
 import FastAPIIcon from '../icons/fastapi.png';
-import FlaskIcon from '../icons/flask.png';
 import FirebaseIcon from '../icons/firebase.png';
 import MySQLIcon from '../icons/mysql.png';
 import SQLiteIcon from '../icons/sqlite.png';
@@ -31,7 +27,6 @@ import IllustratorIcon from '../icons/illustrator.png';
 import NextJsIcon from '../icons/nextjs.png';
 import AstroIcon from '../icons/astro.png';
 import LaravelIcon from '../icons/laravel.png';
-import TailwindIcon from '../icons/tailwind.png';
 import NestJsIcon from '../icons/nestjs.png';
 
 // --- DATA STRUCTURE ---
@@ -45,7 +40,7 @@ const skillCategories = [
       { name: 'Next.js', icon: NextJsIcon },
       { name: 'Flutter', icon: FlutterIcon },
       { name: 'React Native', icon: ReactNativeIcon },
-      { name: 'TypeScript', icon: JavaScriptIcon },
+      { name: 'TypeScript', icon: TypeScriptIcon },
       { name: 'Angular', icon: AngularIcon },
       { name: 'Astro', icon: AstroIcon },
       { name: 'Android', icon: AndroidIcon },
