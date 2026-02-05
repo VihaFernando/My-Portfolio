@@ -4,28 +4,26 @@ import { Briefcase, Users, Code2, Calendar, CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
+    title: "Co-Founder",
+    company: "PilotUP",
+    period: "November 2025 - Present",
+    current: true,
+    description: [
+      "Building PilotUP, a platform for creating autonomous AI employees that run and automate core business operations, helping founders to scale and operate faster and more efficiently."
+    ],
+    icon: Code2
+  },
+  {
     title: "Associate Software Engineer (Technical Lead)",
     company: "Apps Technologies (Pvt) Ltd",
     period: "August 2025 - Present",
     current: true,
     description: [
-      "Leading and coordinating development tasks across the team for end-to-end academic processes, ranging from student registration to convocation.",
-      "Designing and implementing core system modules including examinations, grading engines, messaging systems, and administrative workflows.",
-      "Mentoring interns and junior team members through rigorous code reviews, technical guidance, and enforcing best practices.",
-      "Conducting technical interviews and performance evaluations for incoming software engineering recruits."
+      "Leading development across the team for end-to-end academic processes, from student registration to convocation.",
+      "Designing core system modules including examinations, grading engines, and administrative workflows.",
+      "Mentoring junior developers and conducting technical interviews for software engineering recruits."
     ],
     icon: Users
-  },
-  {
-    title: "Co-Founder",
-    company: "CodeMaxed",
-    period: "October 2024 - Present",
-    current: true,
-    description: [
-      "Leading the technical vision and architecture of scalable software solutions.",
-      "Driving innovation in product development while managing a skilled team of developers."
-    ],
-    icon: Code2
   },
   {
     title: "Software Developer Intern",

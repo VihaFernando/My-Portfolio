@@ -28,6 +28,11 @@ import FigmaIcon from '../icons/figma.png';
 import AdobeXDIcon from '../icons/adobe-xd.png';
 import PhotoshopIcon from '../icons/photoshop.png';
 import IllustratorIcon from '../icons/illustrator.png';
+import NextJsIcon from '../icons/nextjs.png';
+import AstroIcon from '../icons/astro.png';
+import LaravelIcon from '../icons/laravel.png';
+import TailwindIcon from '../icons/tailwind.png';
+import NestJsIcon from '../icons/nestjs.png';
 
 // --- DATA STRUCTURE ---
 const skillCategories = [
@@ -37,12 +42,14 @@ const skillCategories = [
     icon: <Layout className="w-5 h-5 text-blue-400" />,
     skills: [
       { name: 'React', icon: ReactIcon },
+      { name: 'Next.js', icon: NextJsIcon },
       { name: 'Flutter', icon: FlutterIcon },
       { name: 'React Native', icon: ReactNativeIcon },
       { name: 'TypeScript', icon: JavaScriptIcon }, // Assuming JS icon for TS or JS
       { name: 'HTML5', icon: HTMLIcon },
-      { name: 'Tailwind', icon: CSSIcon }, // Assuming CSS icon for styling
+      { name: 'Tailwind', icon: TailwindIcon },
       { name: 'Angular', icon: AngularIcon },
+      { name: 'Astro', icon: AstroIcon },
       { name: 'Android', icon: AndroidIcon },
     ],
     colSpan: "col-span-1 md:col-span-2",
@@ -58,6 +65,8 @@ const skillCategories = [
       { name: 'Spring Boot', icon: SpringBootIcon },
       { name: 'Express', icon: ExpressJsIcon },
       { name: 'FastAPI', icon: FastAPIIcon },
+      { name: 'Laravel', icon: LaravelIcon },
+      { name: 'NestJS', icon: NestJsIcon },
     ],
     colSpan: "col-span-1 md:col-span-1",
   },
