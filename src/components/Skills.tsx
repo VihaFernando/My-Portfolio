@@ -45,9 +45,7 @@ const skillCategories = [
       { name: 'Next.js', icon: NextJsIcon },
       { name: 'Flutter', icon: FlutterIcon },
       { name: 'React Native', icon: ReactNativeIcon },
-      { name: 'TypeScript', icon: JavaScriptIcon }, // Assuming JS icon for TS or JS
-      { name: 'HTML5', icon: HTMLIcon },
-      { name: 'Tailwind', icon: TailwindIcon },
+      { name: 'TypeScript', icon: JavaScriptIcon },
       { name: 'Angular', icon: AngularIcon },
       { name: 'Astro', icon: AstroIcon },
       { name: 'Android', icon: AndroidIcon },
